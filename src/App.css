@@ -61,10 +61,13 @@ header {
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
+    background: #FFFFFF;
+box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+border-radius: 5px;
 }
 .search{
     border: none;
-    width: 80%;
+    width: 85%;
     height: 100%;
 }
 .search:focus {
@@ -76,11 +79,15 @@ header {
         height: 160px;
         width: 100%;
         justify-content: space-around;
+        gap: 360px;
 }
 .select{
     width: 13.8%;
     height: 56px;
     border: none;
+    background: #FFFFFF;
+box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+border-radius: 5px;
 }
 .select:focus{
     outline: none;
@@ -94,13 +101,75 @@ header {
 .card{
     width: 264px;
     height: 336px;
+    
 }
 .container{
-    width: 300px;
-    height: 400px;
-    margin: 50px;
+    width: 264px;
+    height: 336px;
+    background: #FFFFFF;
+box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
+border-radius: 5px;
+margin: 50px;
 }
 .imgs{
-    width: 267px;
+    width: 264px;
     height: 160px;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px;
+}
+.mainDiv{
+    display: flex ;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.mainContainer{
+    margin: 0 auto;
+    background-color:#F2F2F2;
+}
+h4{
+    font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+
+color: #111517;
+}
+.h4tags{
+    display: flex;
+    height: 100px;
+    width: 267px;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.countryNames{
+    position: absolute;
+height: 26px;
+
+font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 26px;
+/* identical to box height, or 144% */
+margin-left: 20px;
+margin-top: 15px;
+
+color: #111517;
+}
+h3{
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    
+font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 200;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
 }

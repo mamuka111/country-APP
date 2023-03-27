@@ -9,6 +9,10 @@ import Card from './components/Card';
 function App() {
   const [data,setData] =useState();
   const [fetched, setFetched] = useState(false);
+
+
+
+  
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((response) => {
       console.log(response.data);
@@ -17,21 +21,17 @@ function App() {
       
     });
   }, []);
-//  function cardsFunction(){
-//   if(fetched){
-//     data.map((element) =>{
-     
-//     })
-//   }
-// }
+
   return (
     <>
+    <div className='mainContainer'>
     <Header/>
     <Filter/>
     <div className='mainDiv'>
     {fetched && data.map((element) => (
        <div className='container'> <Card key={element.name.common} data={element} /></div>
       ))}
+      </div>
       </div>
     </>
   );

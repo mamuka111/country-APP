@@ -5,11 +5,11 @@ import search from "../images/search.png";
 export default function Filter(props) {
     let array = [];
 
-
+    console.log(props.searched);
    props.arai.map((element) => {
     return !array.includes(element.region) && array.push(element.region) 
    })
-   console.log(array);
+//    console.log(array);
 
 
   return (
@@ -17,7 +17,7 @@ export default function Filter(props) {
         <div className='section'>
         <div className='searchDiv'>
         <img className='searchImg' src={search}></img>
-        <input className='search' placeholder='search for a country...'></input>            
+        <input onInput={(e)=>props.search(e)} className='search' placeholder='search for a country...' value={props.searched}></input>            
         </div>
         <select className='select' onChange={props.onChange}>
             <option value="Filter by Region">Filter by Region</option>

@@ -10,6 +10,12 @@ function App() {
   const [data,setData] =useState([]);
   const [fetched, setFetched] = useState(false);
   const [clickedRegion,setClickedRegion] = useState("Filter by Region")
+  const [searched, setsearched] = useState("")
+
+  function searchChange(el){
+    setsearched(el.target.value)
+   
+  } 
 
   function onChange(event){
     setClickedRegion(event.target.value)
@@ -17,13 +23,13 @@ function App() {
    }
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       setData(response.data);
       setFetched(true);
     });
   }, []);
 
-  console.log(data);
+  // console.log(data);
   
   if(data.length === 0){
     return 
@@ -33,7 +39,7 @@ function App() {
     <>
     <div className='mainContainer'>
     <Header/>
-    <Filter arai={data} onChange={onChange}/>
+    <Filter arai={data} onChange={onChange} search={searchChange} searched={searched}/>
     <div className='mainDiv'>
     {fetched && data.map((element) => (
   (clickedRegion === "Filter by Region" || element.region === clickedRegion) ? 

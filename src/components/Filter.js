@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import search from "../images/search.png";
- 
-export default function Filter() {
+
+
+export default function Filter(props) {
+    let array = [];
+
+
+   props.arai.map((element) => {
+    return !array.includes(element.region) && array.push(element.region) 
+   })
+   console.log(array);
+
+
   return (
         <>
         <div className='section'>
@@ -9,13 +19,11 @@ export default function Filter() {
         <img className='searchImg' src={search}></img>
         <input className='search' placeholder='search for a country...'></input>            
         </div>
-        <select className='select'>
+        <select className='select' onChange={props.onChange}>
             <option value="Filter by Region">Filter by Region</option>
-            <option value="africa">africa</option>
-            <option value="america">america</option>
-            <option value="asia">asia</option>
-            <option value="europe">europe</option>
-            <option value="oceania">oceania</option>
+            {array.map((e) => {
+                return <option>{e}</option>
+            })}
         </select>
          </div>
         </>

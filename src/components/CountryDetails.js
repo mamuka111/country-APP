@@ -16,7 +16,7 @@ export default function CountryDetails(props) {
    <>
    <div className='nextCard'>
    <div className='nextCardLeft'>
-    <div className='backDiv'>
+    <div onClick={() => {navigate("/")}} className='backDiv'>
       <img className='arrow' src={arrowBack}></img>
       <div className='back'>back</div>
     </div>

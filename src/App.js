@@ -1,53 +1,56 @@
 import './App.css';
 import Header from './components/Header';
 import axios from 'axios';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import Filter from './components/Filter';
-import Card from './components/Card';
+import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, BrowserRouter, Routes } from 'react-router-dom';
+import CountryDetails from './components/CountryDetails';
+import { Link } from 'react-router-dom';
+import MainPage from './components/MainPage';
 
 function App() {
-  const [data,setData] =useState([]);
+  const [data, setData] = useState([]);
   const [fetched, setFetched] = useState(false);
-  const [clickedRegion,setClickedRegion] = useState("Filter by Region")
-  const [searched, setsearched] = useState("")
+  const [clickedRegion, setClickedRegion] = useState('Filter by Region');
+  const [searched, setSearched] = useState('');
 
-  function searchChange(el){
-    setsearched(el.target.value)
-   
-  } 
+  function searchChange(el) {
+    setSearched(el.target.value);
+  }
+  function onChange(event) {
+    setClickedRegion(event.target.value);
+  }
 
-  function onChange(event){
-    setClickedRegion(event.target.value)
-    // console.log(event.target.value);
-   }
   useEffect(() => {
-    axios.get("https://restcountries.com/v3.1/all").then((response) => {
-      // console.log(response.data);
+    axios.get('https://restcountries.com/v3.1/all').then((response) => {
       setData(response.data);
       setFetched(true);
+      console.log(response.data)
+
     });
   }, []);
 
-  // console.log(data);
-  
-  if(data.length === 0){
-    return 
+  if (data.length === 0) {
+    return null;
   }
-  
+
+  const filteredData = data.filter(
+    (element) =>
+      (clickedRegion === 'Filter by Region' || element.region === clickedRegion) &&
+      (searched === '' ||
+        element.name.common.toLowerCase().includes(searched.toLowerCase()))
+  );
+
   return (
     <>
-    <div className='mainContainer'>
-    <Header/>
-    <Filter arai={data} onChange={onChange} search={searchChange} searched={searched}/>
-    <div className='mainDiv'>
-    {fetched && data.map((element) => (
-  (clickedRegion === "Filter by Region" || element.region === clickedRegion) ? 
-    <div className='container'>
-      <Card key={element.name.common} data={element} />
-    </div> : null
-))}
-      </div>
+      <div className='mainContainer'>
+        <Header />
+        <BrowserRouter>
+        <Routes>
+          <Route path='/:countryId' element={<CountryDetails data={data}/>}/>
+        <Route  path='/' element={<MainPage data={data} onChange={onChange} searchChange={searchChange} searched={searched} filteredData={filteredData} fetched={fetched}  /> }/>
+      
+        </Routes>
+        </BrowserRouter>
       </div>
     </>
   );

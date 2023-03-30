@@ -1,31 +1,42 @@
-import React, { useState } from 'react'
-import search from "../images/search.png";
-
+import React, { useState } from 'react';
+import search from '../images/search.png';
 
 export default function Filter(props) {
-    let array = [];
+  const [array, setArray] = useState([]);
 
-    console.log(props.searched);
-   props.arai.map((element) => {
-    return !array.includes(element.region) && array.push(element.region) 
-   })
-//    console.log(array);
+  props.arai.forEach((element) => {
+    if (!array.includes(element.region)) {
+      setArray([...array, element.region]);
+    }
+  });
 
+  function searchChange(el) {
+    props.search(el);
+  }
+
+  function onChange(event) {
+    props.onChange(event);
+  }
 
   return (
-        <>
-        <div className='section'>
+    <>
+      <div className='section'>
         <div className='searchDiv'>
-        <img className='searchImg' src={search}></img>
-        <input onInput={(e)=>props.search(e)} className='search' placeholder='search for a country...' value={props.searched}></input>            
+          <img className='searchImg' src={search} alt='search icon' />
+          <input
+            onInput={searchChange}
+            className='search'
+            placeholder='Search for a country...'
+            value={props.searched}
+          />
         </div>
-        <select className='select' onChange={props.onChange}>
-            <option value="Filter by Region">Filter by Region</option>
-            {array.map((e) => {
-                return <option>{e}</option>
-            })}
+        <select className='select' onChange={onChange}>
+          <option value='Filter by Region'>Filter by Region</option>
+          {array.map((region) => {
+            return <option key={region}>{region}</option>;
+          })}
         </select>
-         </div>
-        </>
-    )
+      </div>
+    </>
+  );
 }

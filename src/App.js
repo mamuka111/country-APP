@@ -48,7 +48,7 @@ function App() {
 
   return (
     <>
-      <div className={`mainContainer ${isDarkMode ? 'dark-mode-container' : 'light-mode-container'}`} >
+      <div className="mainContainer" >
         <Header isDarkMode={isDarkMode} handleToggle={handleToggle} />
         <BrowserRouter>
         <Routes>

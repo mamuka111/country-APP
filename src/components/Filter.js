@@ -22,7 +22,7 @@ export default function Filter(props) {
 
   return (
     <>
-      <div className='section'>
+      <div className={`section ${isDarkMode ? 'dark-mode-section' : 'light-mode-section'}`}>
         <div className={`searchDiv ${isDarkMode ? 'dark-mode-search' : 'light-mode-search'}`}>
           <img className='searchImg' src={search} alt='search icon' />
           <input

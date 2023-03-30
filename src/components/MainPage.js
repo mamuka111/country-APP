@@ -10,7 +10,7 @@ export default function MainPage(props) {
     const { isDarkMode, handleToggle } = props;  
     return (<>
     <Filter isDarkMode={isDarkMode}   arai={props.data} onChange={props.onChange} search={props.searchChange} searched={props.searched}  />
-    <div className='mainDiv'>
+    <div className={`mainDiv ${isDarkMode ? 'dark-mode-main' : 'light-mode-main'}`}>
       {fetched  && 
         filteredData.map((element) => (
           <div className='container' key={element.name.common}>

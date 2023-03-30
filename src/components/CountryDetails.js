@@ -16,7 +16,7 @@ export default function CountryDetails(props) {
 
   return (
    <>
-   <div className='nextCard'>
+   <div className={`nextCard ${isDarkMode ? 'dark-mode-nextCard' : 'light-mode-nextCard'}`}>
    <div className='nextCardLeft'>
     <div onClick={() => {navigate("/")}} className='backDiv'>
       <img className='arrow' src={arrowBack}></img>

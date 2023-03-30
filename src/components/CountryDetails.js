@@ -28,16 +28,16 @@ export default function CountryDetails(props) {
    <div className='textContainer'> 
    <div className='mainInformation'>
    <h1 className='topH'>{element.name.common}</h1>
-   <h1 className='h'>Native name: {element.name.common}</h1>
-   <h1 className='h'>Population: {element.population}</h1>
-   <h1 className='h'>Region: {element.region}</h1>
-   <h1 className='h'>Subregion: {element.subregion}</h1>
-   <h1 className='h'>Capital: {element.capital}</h1>
+   <h1 className='h'>Native name: <h2 className='h2'>{element.name.common}</h2></h1>
+   <h1 className='h'>Population: <h2 className='h2'>{element.population}</h2></h1>
+   <h1 className='h'>Region: <h2 className='h2'>{element.region}</h2></h1>
+   <h1 className='h'>Subregion: <h2 className='h2'>{element.subregion}</h2></h1>
+   <h1 className='h'>Capital: <h2 className='h2'>{element.capital}</h2></h1>
    </div>
    <div className='secondInformation'>
-    <h1 className='h'>Top Level Domain: {element.tld}</h1>
-    <h1 className='h'>Currencies: {Object.values(element.currencies)[0].name}</h1>
-    <h1 className='h'>Language: {Object.values(element.languages)[0]}</h1>
+    <h1 className='h'>Top Level Domain: <h2 className='h2'>{element.tld}</h2></h1>
+    <h1 className='h'>Currencies: <h2 className='h2'>{Object.values(element.currencies)[0].name}</h2></h1>
+    <h1 className='h'>Language: <h2 className='h2'>{Object.values(element.languages)[0]}</h2></h1>
    </div>
    </div>
   </div>

@@ -125,6 +125,7 @@ margin: 50px;
 .mainContainer{
     margin: 0 auto;
     background-color:#ffffff;
+    height: 100vh;
 }
 h4{
     font-family: 'Nunito Sans';
@@ -312,4 +313,7 @@ color: #111517;
 
 .dark-mode-search::placeholder {
   color: white;
+}
+.dark-mode-h1{
+color: #FFFFFF;
 }

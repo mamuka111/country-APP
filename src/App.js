@@ -52,7 +52,7 @@ function App() {
         <Header isDarkMode={isDarkMode} handleToggle={handleToggle} />
         <BrowserRouter>
         <Routes>
-          <Route path='/:countryId' element={<CountryDetails data={data}/>}/>
+          <Route path='/:countryId' element={<CountryDetails isDarkMode={isDarkMode}  data={data}/>}/>
         <Route  path='/' element={<MainPage isDarkMode={isDarkMode}  data={data} onChange={onChange} searchChange={searchChange} searched={searched} filteredData={filteredData} fetched={fetched}  /> }/>
       
         </Routes>

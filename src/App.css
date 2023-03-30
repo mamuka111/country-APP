@@ -148,8 +148,8 @@ color: #111517;
     margin-top: 20px;
 }
 .countryNames{
-    position: absolute;
 height: 26px;
+color: black;
 
 font-family: 'Nunito Sans';
 font-style: normal;
@@ -294,5 +294,22 @@ color: #111517;
   background-color: #202C36;
 }
 .ragac{
-  
+  display: flex;
+}
+.dark-mode-card{
+  background-color: #2B3844;;
+}
+.dark-mode-card{
+  color: #FFFFFF;
+}
+.dark-mode-search{
+  background-color: #2B3844;
+  color: #FFFFFF;
+}
+.light-mode-search::placeholder {
+  color: gray;
+}
+
+.dark-mode-search::placeholder {
+  color: white;
 }

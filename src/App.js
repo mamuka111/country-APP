@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, BrowserRouter, Routes } from 'r
 import CountryDetails from './components/CountryDetails';
 import { Link } from 'react-router-dom';
 import MainPage from './components/MainPage';
+import Card from './components/Card';
 
 function App() {
   const [data, setData] = useState([]);
@@ -52,7 +53,7 @@ function App() {
         <BrowserRouter>
         <Routes>
           <Route path='/:countryId' element={<CountryDetails data={data}/>}/>
-        <Route  path='/' element={<MainPage data={data} onChange={onChange} searchChange={searchChange} searched={searched} filteredData={filteredData} fetched={fetched}  /> }/>
+        <Route  path='/' element={<MainPage isDarkMode={isDarkMode}  data={data} onChange={onChange} searchChange={searchChange} searched={searched} filteredData={filteredData} fetched={fetched}  /> }/>
       
         </Routes>
         </BrowserRouter>

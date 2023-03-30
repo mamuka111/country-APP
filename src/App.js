@@ -12,6 +12,11 @@ function App() {
   const [fetched, setFetched] = useState(false);
   const [clickedRegion, setClickedRegion] = useState('Filter by Region');
   const [searched, setSearched] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleToggle = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   function searchChange(el) {
     setSearched(el.target.value);
@@ -42,8 +47,8 @@ function App() {
 
   return (
     <>
-      <div className='mainContainer'>
-        <Header />
+      <div className={`mainContainer ${isDarkMode ? 'dark-mode-container' : 'light-mode-container'}`} >
+        <Header isDarkMode={isDarkMode} handleToggle={handleToggle} />
         <BrowserRouter>
         <Routes>
           <Route path='/:countryId' element={<CountryDetails data={data}/>}/>

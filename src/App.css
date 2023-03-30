@@ -14,16 +14,17 @@ header {
   background-color: #ffffff;
 }
 .headerDiv {
-  width: 90%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
   display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    justify-content: center;
+    gap: 900px;
 }
 .title {
   font-family: "Nunito Sans", sans-serif;
@@ -270,4 +271,28 @@ color: #111517;
   font-size: 16px;
   line-height: 32px;
   color: #111517c8;
+}
+.borderCountries{
+  width: 90%;
+  background-color:red ;
+  margin-top: -100px;
+
+}
+.dark-mode{
+  background-color: #2B3844;
+}
+.dark-mode-title{
+  color: #FFFFFF;
+}
+.dark-mode-text{
+  color: #FFFFFF;
+}
+.dark-mode-div{
+  background-color:#2B3844;;
+}
+.dark-mode-container{
+  background-color: #202C36;
+}
+.ragac{
+  
 }

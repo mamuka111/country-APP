@@ -29,7 +29,7 @@ export default function CountryDetails(props) {
    <div className='mainInformation'>
    <h1 className='topH'>{element.name.common}</h1>
    <h1 className='h'>Native name: <h2 className='h2'>{element.name.common}</h2></h1>
-   <h1 className='h'>Population: <h2 className='h2'>{element.population}</h2></h1>
+   <h1 className='h'>Population: <h2 className='h2'>{element.population.toLocaleString()}</h2></h1>
    <h1 className='h'>Region: <h2 className='h2'>{element.region}</h2></h1>
    <h1 className='h'>Subregion: <h2 className='h2'>{element.subregion}</h2></h1>
    <h1 className='h'>Capital: <h2 className='h2'>{element.capital}</h2></h1>
@@ -39,6 +39,9 @@ export default function CountryDetails(props) {
     <h1 className='h'>Currencies: <h2 className='h2'>{Object.values(element.currencies)[0].name}</h2></h1>
     <h1 className='h'>Language: <h2 className='h2'>{Object.values(element.languages)[0]}</h2></h1>
    </div>
+   </div>
+   <div className='borderCountries'>
+
    </div>
   </div>
    </div>
